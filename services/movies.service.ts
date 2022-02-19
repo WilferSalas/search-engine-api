@@ -16,17 +16,13 @@ class MoviesService {
     this.movies = data;
   };
 
-  find() {
-    return this.movies;
+  find(serachTerm) {
+    return this.movies.filter((item) =>
+      item.title.toLocaleLowerCase().includes(serachTerm?.toLocaleLowerCase())).slice(0, 4);
   };
 
   findOne(id) {
     return this.movies.find(movie => movie.id === id);
-  };
-
-  findSimilar(serachTerm) {
-    return this.movies.filter((item) =>
-      item.title.toLocaleLowerCase().includes(serachTerm.toLocaleLowerCase())).slice(0, 3);
   };
 };
 

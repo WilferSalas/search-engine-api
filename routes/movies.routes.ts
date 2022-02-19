@@ -7,12 +7,14 @@ import MoviesService from '../services/movies.service';
 const router = express.Router();
 const service = new MoviesService();
 
-router.get('/', (_, res) => {
-  const movies = service.find();
+router.post('/', (req, res) => {
+  const { body: { searchTerm } } = req;
 
-  if (movies) res.status(200).json(movies);
+  const movieTitles = service.find(searchTerm);
 
-  res.status(404).send('Error getting the movies');
+  if (movieTitles) res.status(201).json(movieTitles);
+
+  res.status(404).send('Error getting movie titles');
 });
 
 router.get('/:id', (req, res) => {
@@ -23,16 +25,6 @@ router.get('/:id', (req, res) => {
   if (movie) res.status(200).json(movie);
 
   res.status(404).send('Movie not found');
-});
-
-router.post('/similar', (req, res) => {
-  const { body: { serachTerm } } = req;
-
-  const movieTitles = service.findSimilar(serachTerm);
-
-  if (movieTitles) res.status(201).json(movieTitles);
-
-  res.status(404).send('Error getting movie titles');
 });
 
 export default router;

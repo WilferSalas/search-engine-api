@@ -1,5 +1,6 @@
 // @packages
 import express from 'express';
+import cors from "cors";
 
 // @scripts
 import routerApi from './routes';
@@ -9,6 +10,7 @@ const port = 3001;
 
 // @middlewares
 app.use(express.json());
+app.use(cors());
 
 // @routes
 routerApi(app);
