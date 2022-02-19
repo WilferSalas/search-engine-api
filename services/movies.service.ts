@@ -19,6 +19,15 @@ class MoviesService {
   find() {
     return this.movies;
   };
+
+  findOne(id) {
+    return this.movies.find(movie => movie.id === id);
+  };
+
+  findSimilar(serachTerm) {
+    return this.movies.filter((item) =>
+      item.title.toLocaleLowerCase().includes(serachTerm.toLocaleLowerCase())).slice(0, 3);
+  };
 };
 
 export default MoviesService;
