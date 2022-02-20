@@ -12,9 +12,9 @@ router.post('/', (req, res) => {
 
   const movieTitles = service.find(searchTerm);
 
-  if (movieTitles) res.status(201).json(movieTitles);
+  if (movieTitles) return res.status(201).json(movieTitles);
 
-  res.status(404).send('Error getting movie titles');
+  return res.status(404).send('Error getting movie titles');
 });
 
 router.get('/:id', (req, res) => {
@@ -22,9 +22,9 @@ router.get('/:id', (req, res) => {
 
   const movie = service.findOne(id);
 
-  if (movie) res.status(200).json(movie);
+  if (movie) return res.status(200).json(movie);
 
-  res.status(404).send('Movie not found');
+  return res.status(404).send('Movie not found');
 });
 
 export default router;
