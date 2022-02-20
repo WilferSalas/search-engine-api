@@ -17,7 +17,7 @@ router.post('/', (req, res) => {
   return res.status(404).send('Error getting movie titles');
 });
 
-router.get('/:id', (req, res) => {
+router.get('/movie/:id', (req, res) => {
   const { params: { id } } = req;
 
   const movie = service.findOne(id);
