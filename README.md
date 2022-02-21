@@ -17,7 +17,7 @@ API deployed in (https://shrouded-tundra-06444.herokuapp.com).
 
 # Installation:
 
-Open a console (terminal) and create the **Search Engine API**'s containers. Once containers are created, follow this instructions
+Open a console (terminal) and create the **Search Engine API**'s folder. Once folder is created, follow this instructions
 
 ```bash
 # Clone project
