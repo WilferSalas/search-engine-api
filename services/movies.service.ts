@@ -8,10 +8,10 @@ type movie = {
   image: string;
   shortDescription: string;
   title: string;
-}[]
+};
 
 class MoviesService {
-  movies: movie;
+  movies: movie[];
   constructor() {
     this.movies = data;
   };
