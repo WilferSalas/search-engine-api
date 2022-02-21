@@ -30,7 +30,7 @@ $ cd search-engine-api
 $ npm i
 
 # Run the project
-$ npm run dev
+$ npm run start
 
 # Go to 
 http://localhost:3001
