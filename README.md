@@ -35,3 +35,12 @@ $ npm run start
 # Go to 
 http://localhost:3001
 ```
+
+# Use:
+
+```
+# Example request
+
+- GET
+
+https://shrouded-tundra-06444.herokuapp.com/api/v1/movies/movie/tt0068646
